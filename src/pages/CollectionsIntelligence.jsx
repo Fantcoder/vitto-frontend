@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../components/Button';
 import SectionBadge from '../components/SectionBadge';
-import PlaceholderBox from '../components/PlaceholderBox';
 import { FooterCTA, FloatingShapes } from './Home';
 
 /* ──────────────── Hero ──────────────── */
@@ -22,8 +21,7 @@ const Hero = () => (
             <Button variant="outline" size="lg">Learn more</Button>
           </div>
         </div>
-        <div className="relative">
-          <PlaceholderBox height="380px" label="Collections Dashboard" className="w-full" />
+        <div className="relative w-full h-[420px] flex items-center justify-center">
           <FloatingShapes />
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../components/Button';
 import SectionBadge from '../components/SectionBadge';
-import PlaceholderBox from '../components/PlaceholderBox';
 import { FooterCTA, FloatingShapes } from './Home';
 
 /* ──────────────── Hero ──────────────── */
@@ -21,8 +20,7 @@ const Hero = () => (
             <Button variant="outline" size="lg">Learn more</Button>
           </div>
         </div>
-        <div className="relative">
-          <PlaceholderBox height="380px" label="Lending Lifecycle Overview" className="w-full" />
+        <div className="relative w-full h-[420px] flex items-center justify-center">
           <FloatingShapes />
         </div>
       </div>
@@ -108,24 +106,22 @@ const LifecycleTimeline = () => (
       {/* Desktop Timeline */}
       <div className="hidden lg:block relative mx-auto w-full max-w-6xl">
          {/* The horizontal connection red line */}
-         <div className="absolute top-8 left-[8%] right-[8%] h-1 bg-primary z-0" />
+         <div className="absolute top-8 left-[4%] right-[4%] h-1 bg-primary z-0" />
          
-         <div className="grid grid-cols-6 gap-4 relative z-10">
+         <div className="grid grid-cols-7 gap-2 relative z-10">
             {journeyStages.map((stage, i) => (
               <div key={i} className="flex flex-col items-center text-center relative group">
                 {/* Specific colored circles matching screenshot */}
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-md transition-transform group-hover:scale-110 mb-4
-                   ${i === 0 ? 'bg-teal-400' : ''}
-                   ${i === 1 ? 'bg-cyan-400' : ''}
-                   ${i === 2 ? 'bg-blue-400' : ''}
-                   ${i === 3 ? 'bg-indigo-400' : ''}
-                   ${i === 4 ? 'bg-emerald-400' : ''}
-                   ${i === 5 ? 'bg-red-500' : ''}
-                `}>
-                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                   {React.cloneElement(stage.icon).props.children}
-                   </svg>
-                </div>
+                {(() => {
+                  const colors = ['bg-teal-400','bg-cyan-400','bg-blue-400','bg-indigo-400','bg-emerald-400','bg-red-500','bg-gray-800'];
+                  return (
+                    <div className={`w-16 h-16 rounded-full flex items-center justify-center shadow-md transition-transform group-hover:scale-110 mb-4 ${colors[i] || 'bg-gray-400'}`}>
+                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                       {React.cloneElement(stage.icon).props.children}
+                       </svg>
+                    </div>
+                  );
+                })()}
                 <h4 className="text-xs font-bold text-text-primary uppercase tracking-wider">{stage.label}</h4>
                 <p className="mt-1 text-[10px] text-text-secondary w-[100px] leading-tight mx-auto">{stage.sub}</p>
               </div>
