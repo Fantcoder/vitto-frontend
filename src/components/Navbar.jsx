@@ -110,35 +110,37 @@ export default function Navbar() {
 
                     {/* Dropdown */}
                     <div
-                      className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-gray-100 py-2 transition-all duration-200 ${
+                      className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 w-56 transition-all duration-200 ${
                         dropdownOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
                       }`}
                     >
-                      {platformLinks.map((item) =>
-                        item.comingSoon ? (
-                          <div
-                            key={item.label}
-                            className="px-4 py-2.5 text-sm text-gray-300 cursor-not-allowed flex items-center justify-between"
-                          >
-                            {item.label}
-                            <span className="text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full font-medium">
-                              Soon
-                            </span>
-                          </div>
-                        ) : (
-                          <Link
-                            key={item.label}
-                            to={item.to}
-                            className={`block px-4 py-2.5 text-sm no-underline transition-colors ${
-                              isActive(item.to)
-                                ? 'text-primary bg-red-50'
-                                : 'text-text-primary hover:bg-gray-50 hover:text-primary'
-                            }`}
-                          >
-                            {item.label}
-                          </Link>
-                        )
-                      )}
+                      <div className="bg-white rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-gray-100 py-2">
+                        {platformLinks.map((item) =>
+                          item.comingSoon ? (
+                            <div
+                              key={item.label}
+                              className="px-4 py-2.5 text-sm text-gray-300 cursor-not-allowed flex items-center justify-between"
+                            >
+                              {item.label}
+                              <span className="text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full font-medium">
+                                Soon
+                              </span>
+                            </div>
+                          ) : (
+                            <Link
+                              key={item.label}
+                              to={item.to}
+                              className={`block px-4 py-2.5 text-sm no-underline transition-colors ${
+                                isActive(item.to)
+                                  ? 'text-primary bg-red-50'
+                                  : 'text-text-primary hover:bg-gray-50 hover:text-primary'
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          )
+                        )}
+                      </div>
                     </div>
                   </div>
                 ) : (
