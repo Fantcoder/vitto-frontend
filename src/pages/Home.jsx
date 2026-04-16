@@ -1,60 +1,10 @@
 import React from 'react';
 import Button from '../components/Button';
 import SectionBadge from '../components/SectionBadge';
+import HeroCard from '../components/HeroCard';
 
-/* ──────────────── Decorative Floating Shapes ──────────────── */
-export const FloatingShapes = () => (
-  // Vertical stack of absolute positioned shapes sticking out on the left edge
-  <div className="absolute top-10 -left-12 lg:-left-32 flex flex-col items-center gap-4 z-20 pointer-events-none scale-75 lg:scale-100">
-    {/* Blue dotted triangle */}
-    <svg width="60" height="60" viewBox="0 0 100 100" fill="none" className="transform rotate-[30deg] drop-shadow-md origin-bottom">
-      <path d="M10 90L90 90L50 10Z" fill="#2563EB" />
-      <circle cx="50" cy="40" r="4" fill="white" />
-      <circle cx="40" cy="55" r="3" fill="white" />
-      <circle cx="60" cy="55" r="3" fill="white" />
-      <circle cx="50" cy="70" r="4" fill="white" />
-    </svg>
-    
-    {/* Deep Blue rounded slice */}
-    <svg width="50" height="90" viewBox="0 0 50 90" fill="none" className="transform -rotate-12 drop-shadow-md -ml-8">
-      <path d="M25 0 C 50 0 50 40 50 60 C 50 80 40 90 25 90 C 10 90 0 80 0 60 C 0 40 0 0 25 0 Z" fill="#1E3A8A" />
-      <path d="M10 20 Q 30 50 40 80" stroke="white" strokeWidth="1" className="opacity-20" />
-      <path d="M20 10 Q 40 40 50 70" stroke="white" strokeWidth="1" className="opacity-20" />
-    </svg>
-    
-    {/* Yellow piece */}
-    <svg width="40" height="40" viewBox="0 0 80 80" fill="none" className="transform rotate-12 drop-shadow-md ml-4 -mt-10 z-10">
-      <path d="M10 10 Q 50 10 70 50 L 10 60 Z" fill="#FBBF24"/>
-      <circle cx="40" cy="30" r="3" fill="white" />
-      <circle cx="30" cy="40" r="2" fill="white" />
-    </svg>
-
-    {/* Red dotted shape */}
-    <svg width="70" height="40" viewBox="0 0 100 60" fill="none" className="transform -rotate-[15deg] drop-shadow-md mt-6 -ml-4">
-       <path d="M10 30 C 10 10 30 10 50 10 C 70 10 90 10 90 30 C 90 50 70 50 50 50 C 30 50 10 50 10 30 Z" fill="#E8194B" />
-       <circle cx="30" cy="25" r="2" fill="white" className="opacity-80" />
-       <circle cx="50" cy="35" r="2" fill="white" className="opacity-80" />
-       <circle cx="70" cy="25" r="2" fill="white" className="opacity-80" />
-       <circle cx="40" cy="20" r="2" fill="white" className="opacity-80" />
-       <circle cx="60" cy="30" r="2" fill="white" className="opacity-80" />
-    </svg>
-
-    {/* Yellow angular piece */}
-    <svg width="50" height="50" viewBox="0 0 80 80" fill="none" className="transform rotate-[20deg] drop-shadow-md -ml-16 mt-8">
-      <path d="M10 40 L 70 40 L 70 70 L 40 70 Z" fill="#FBBF24"/>
-      <circle cx="40" cy="50" r="2" fill="white" className="opacity-80" />
-      <circle cx="60" cy="55" r="2" fill="white" className="opacity-80" />
-    </svg>
-
-    {/* Green dotted piece */}
-    <svg width="40" height="40" viewBox="0 0 60 60" fill="none" className="transform -rotate-[20deg] drop-shadow-md -ml-4 mt-8">
-      <path d="M10 30 C 10 10 50 10 50 30 C 50 50 10 50 10 30 Z" fill="#10B981" />
-      <circle cx="20" cy="25" r="2" fill="white" className="opacity-80" />
-      <circle cx="35" cy="35" r="2" fill="white" className="opacity-80" />
-      <circle cx="40" cy="20" r="2" fill="white" className="opacity-80" />
-    </svg>
-  </div>
-);
+/* ──────────────── Decorative Floating Shapes (used externally) ──────────────── */
+export const FloatingShapes = () => null; // Replaced by HeroCard component
 
 /* ──────────────── Section 1: Hero ──────────────── */
 const PillBadge = ({ icon, text, className }) => (
@@ -115,10 +65,9 @@ const HeroSection = () => (
       </div>
     </div>
 
-    {/* Center large card replacing random shapes */}
-    <div className="relative w-full max-w-[1000px] mx-auto mt-12 sm:mt-16 px-4 lg:px-8 pb-12 flex-1">
-       <FloatingShapes />
-       <div className="w-full h-[300px] sm:h-[400px] lg:h-[480px] bg-[#FAFBFF] border-2 border-red-200/60 rounded-[24px] shadow-[0_20px_50px_rgba(232,25,75,0.05)] relative z-10 mx-auto" />
+    {/* Center large card with floating shapes */}
+    <div className="relative w-full max-w-[1000px] mx-auto mt-12 sm:mt-16 px-4 lg:px-8 pb-12">
+       <HeroCard />
     </div>
   </section>
 );

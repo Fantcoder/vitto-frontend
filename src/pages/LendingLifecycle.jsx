@@ -1,7 +1,8 @@
 import React from 'react';
 import Button from '../components/Button';
 import SectionBadge from '../components/SectionBadge';
-import { FooterCTA, FloatingShapes } from './Home';
+import { FooterCTA } from './Home';
+import HeroCard from '../components/HeroCard';
 
 /* ──────────────── Hero ──────────────── */
 const Hero = () => (
@@ -20,9 +21,7 @@ const Hero = () => (
             <Button variant="outline" size="lg">Learn more</Button>
           </div>
         </div>
-        <div className="relative w-full h-[420px] flex items-center justify-center">
-          <FloatingShapes />
-        </div>
+        <HeroCard />
       </div>
     </div>
   </section>
