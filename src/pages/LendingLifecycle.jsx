@@ -100,7 +100,7 @@ const LifecycleTimeline = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
       <SectionBadge color="red" className="mb-4">THE JOURNEY</SectionBadge>
       <h2 className="text-3xl lg:text-[40px] font-bold tracking-tight text-text-primary mb-16">
-         Full Lending Lifecycle, Reimagine
+         Full Lending Lifecycle, Reimagined
       </h2>
 
       {/* Desktop Timeline */}
@@ -156,32 +156,32 @@ const LifecycleTimeline = () => (
 const stageModules = [
   {
     title: 'Acquisition',
-    icon: '🚩',
+    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-400 mb-2"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v10.764a1 1 0 01-1.447.894L15 18M9 6l-4.553 2.276A1 1 0 003 9.171v10.764a1 1 0 001.447.894L9 18M15 10v8M9 6v12M15 10l-6-4" /></svg>,
     items: ['Lead Management System', 'Partner Onboarding Portals', 'Omni-channel Journeys'],
   },
   {
     title: 'Underwriting & LOS',
-    icon: '📋',
+    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-400 mb-2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
     items: ['KYC & Document Analyzers', 'UCIC & Dedupe Logic', 'Dynamic Rule Engine'],
   },
   {
     title: 'Disbursement',
-    icon: '💰',
+    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-400 mb-2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
     items: ['E-Sign Workflows', 'Automated Payouts', 'Ledger Initialization'],
   },
   {
     title: 'Servicing (LMS)',
-    icon: '⚙️',
+    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-400 mb-2"><path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
     items: ['Insurance Auto-Deduct', 'EMI Management', 'Debt Tagging & Tracking'],
   },
   {
     title: 'Collections',
-    icon: '📊',
+    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-400 mb-2"><path strokeLinecap="round" strokeLinejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg>,
     items: ['Smart Agent Allotment', 'Propensity to Pay (PTP) Models', 'Omni-Channel Reminders'],
   },
   {
     title: 'Closure',
-    icon: '✅',
+    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-400 mb-2"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
     items: ['Automated Account Closure', 'NOC Generation', 'Archival & Reporting'],
   },
 ];
@@ -204,8 +204,9 @@ const KeyModulesSection = () => (
             <ul className="mt-3 space-y-2">
               {mod.items.map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm text-text-secondary">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0">
-                    <path d="M4 8L7 11L12 5" stroke="#E8194B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-[2px] shrink-0">
+                    <circle cx="8" cy="8" r="7" fill="#E8194B" />
+                    <path d="M4.5 8L7 10.5L11.5 5.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   {item}
                 </li>

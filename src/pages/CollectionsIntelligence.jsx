@@ -45,27 +45,29 @@ const BrokenSection = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* Left Side: Problem Statement Card */}
-        <div className="bg-white rounded-[24px] p-10 lg:p-14 shadow-2xl relative">
-          <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center mb-8 shadow-inner border border-gray-200">
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4B5563" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M2.97 13.12c-.6.36-.97 1.02-.97 1.74 0 1.11.89 2 2 2h3v3c0 1.11.89 2 2 2h3.5"/><path d="M22 13.12c.6.36.97 1.02.97 1.74 0 1.11-.89 2-2 2h-3v3c0 1.11-.89 2-2 2h-3.5"/></svg>
+        <div className="relative text-white">
+          <div className="w-12 h-12 bg-white/10 rounded flex items-center justify-center mb-8 border border-white/20">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M2.97 13.12c-.6.36-.97 1.02-.97 1.74 0 1.11.89 2 2 2h3v3c0 1.11.89 2 2 2h3.5"/><path d="M22 13.12c.6.36.97 1.02.97 1.74 0 1.11-.89 2-2 2h-3v3c0 1.11-.89 2-2 2h-3.5"/></svg>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight text-text-primary tracking-tight">
+          <h2 className="text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight">
             Traditional Collections Are Broken
           </h2>
-          <p className="mt-6 text-text-secondary leading-relaxed text-lg">
+          <p className="mt-6 text-white/90 leading-relaxed text-lg">
             Your agents are wasting time on borrowers who won't pay while missing those who will pay. It's time for an intelligent upgrade.
           </p>
         </div>
         
         {/* Right Side: Grid of Pain Points */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pb-12 lg:pb-0">
-          {problemCards.map((c) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pb-12 lg:pb-0 relative z-20">
+          {problemCards.map((c, i) => (
             <div 
               key={c.title} 
-              className="bg-white rounded-[20px] p-8 shadow-[0_16px_32px_rgba(0,0,0,0.1)] border border-gray-100 flex flex-col justify-center min-h-[180px]"
+              className={`rounded-[20px] p-8 shadow-[0_16px_32px_rgba(0,0,0,0.1)] border flex flex-col justify-center min-h-[180px] ${
+                i === 0 ? 'bg-gray-900 text-white border-gray-800 transform lg:-translate-y-4' : 'bg-white text-text-secondary border-gray-100'
+              }`}
             >
-              <h4 className="font-extrabold text-lg text-text-primary mb-3 leading-snug">{c.title}</h4>
-              <p className="text-sm text-text-secondary leading-relaxed">{c.desc}</p>
+              <h4 className={`font-extrabold text-lg mb-3 leading-snug ${i === 0 ? 'text-white' : 'text-text-primary'}`}>{c.title}</h4>
+              <p className="text-sm leading-relaxed opacity-90">{c.desc}</p>
             </div>
           ))}
         </div>

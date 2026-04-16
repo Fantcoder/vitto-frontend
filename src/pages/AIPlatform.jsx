@@ -262,18 +262,15 @@ const FraudSection = () => (
               <svg width="200" height="120" viewBox="0 0 200 120" className="drop-shadow-md overflow-visible relative">
                 {/* Background arc */}
                 <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#F3F4F6" strokeWidth="20" strokeLinecap="round" />
-                {/* Red segment (High risk) */}
-                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#E8194B" strokeWidth="20" strokeLinecap="round" strokeDasharray="251" strokeDashoffset="220" />
-                {/* Blue segment (Medium risk) */}
-                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#3B82F6" strokeWidth="20" strokeLinecap="round" strokeDasharray="251" strokeDashoffset="120" className="-rotate-12 translate-x-4 translate-y-3 transform-gpu origin-center" />
                 {/* Green segment (Low risk) */}
-                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#10B981" strokeWidth="20" strokeLinecap="round" strokeDasharray="251" strokeDashoffset="50" className="rotate-12 -translate-x-1 translate-y-1 transform-gpu origin-center" />
+                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#10B981" strokeWidth="20" strokeLinecap="round" strokeDasharray="251.2" strokeDashoffset="0" />
+                {/* Blue segment (Medium risk) */}
+                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#3B82F6" strokeWidth="20" strokeLinecap="round" strokeDasharray="251.2" strokeDashoffset="125" />
+                {/* Red segment (High risk) */}
+                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#E8194B" strokeWidth="20" strokeLinecap="round" strokeDasharray="251.2" strokeDashoffset="200" />
                 
-                {/* Inner chart lines */}
-                <path d="M 50 100 Q 70 60 100 80 T 150 40" fill="none" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" />
-                <path d="M 50 100 Q 80 80 100 90 T 150 60" fill="none" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
                 {/* Center text score */}
-                <text x="100" y="90" textAnchor="middle" fontSize="32" fontWeight="900" fill="#10B981">750</text>
+                <text x="100" y="90" textAnchor="middle" fontSize="36" fontWeight="900" fill="#10B981">750</text>
               </svg>
             </div>
             
@@ -347,12 +344,12 @@ const InstitutionalImpact = () => (
         </div>
         
         {/* Center CTA */}
-        <div className="w-full lg:w-1/3 z-10 my-4 lg:my-0">
-          <div className="bg-primary rounded-3xl p-8 text-center text-white shadow-[0_24px_48px_rgba(232,25,75,0.4)] transform lg:scale-110 border-[6px] border-white relative z-20">
-            <h3 className="text-3xl font-bold mb-6 tracking-tight">Become a<br/>Partner?</h3>
-            <div className="bg-transparent h-40 mb-6 flex items-end justify-center relative overflow-visible -mx-4">
+        <div className="w-full lg:w-1/3 z-10 my-8 lg:my-0">
+          <div className="bg-primary rounded-3xl p-8 pb-0 text-center text-white shadow-[0_24px_48px_rgba(232,25,75,0.4)] transform lg:scale-105 border-[6px] border-white relative z-20 overflow-hidden">
+            <h3 className="text-3xl font-bold mb-4 tracking-tight">Become a<br/>Partner?</h3>
+            <div className="bg-transparent h-40 flex items-end justify-center relative translate-y-2">
                {/* Advanced CSS Mockup of two 3d people figures shaking hands */}
-               <div className="relative flex justify-center w-full z-10 mt-6">
+               <div className="relative flex justify-center w-full z-10">
                  {/* Left Figure (Red shirt) */}
                  <div className="relative mr-0">
                     <div className="w-12 h-14 bg-red-600 rounded-t-xl" />
@@ -377,8 +374,8 @@ const InstitutionalImpact = () => (
                  <div className="absolute top-2 left-1/2 -translate-x-1/2 w-5 h-4 bg-[#FFD1B3] rounded-full z-20 mt-1" />
                </div>
             </div>
-            <div className="flex gap-2 justify-center pb-2">
-               <div className="w-16 h-12 bg-white rounded-lg flex items-center justify-center"><span className="text-primary font-black text-xl italic drop-shadow-md">vitto</span></div>
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+               <div className="w-16 h-10 bg-white rounded flex items-center justify-center opacity-90"><span className="text-primary font-black text-lg italic tracking-tighter">vitto</span></div>
             </div>
           </div>
         </div>
